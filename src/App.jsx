@@ -3048,7 +3048,12 @@ Message: ${enquiryData.message}
                   scrollToPackages();
                 }}
               >
-                <img src={optimizeImage(country.image)} alt={country.name} />
+                <img 
+                  src={optimizeImage(country.image)} 
+                  alt={country.name} 
+                  loading="eager"
+                  decoding="async"
+                />
 
                 <div className="country-overlay">
                   <span>Explore</span>
@@ -3103,7 +3108,12 @@ Message: ${enquiryData.message}
             {filteredPackages.map((item) => (
               <article className="package-card" key={item.id}>
                 <div className="package-image">
-                  <img src={optimizeImage(item.image)} alt={item.title} />
+                  <img 
+                    src={optimizeImage(item.image)} 
+                    alt={item.title} 
+                    loading="eager"
+                    decoding="async"
+                  />
 
                   <span className="package-tag">{item.category}</span>
 
@@ -3228,7 +3238,12 @@ Message: ${enquiryData.message}
                   scrollToPackages();
                 }}
               >
-                <img src={optimizeImage(theme.image)} alt={theme.title} />
+                <img 
+                  src={optimizeImage(theme.image)} 
+                  alt={theme.title} 
+                  loading="eager"
+                  decoding="async"
+                  />
 
                 <div className="theme-overlay">
                   <span>{theme.text}</span>
@@ -3274,7 +3289,12 @@ Message: ${enquiryData.message}
                   })
                 }
               >
-                <img src={optimizeImage(destination.image)} alt={destination.name} />
+                <img 
+                  src={optimizeImage(destination.image)} 
+                  alt={destination.name} 
+                  loading="eager"
+                  decoding="async"
+                />
 
                 <div className="destination-card-overlay">
                   <small>{destination.state}</small>
@@ -3413,6 +3433,8 @@ Message: ${enquiryData.message}
               <img
                 src={optimizeImage(item.image)}
                 alt={item.title}
+                loading="eager"
+                decoding="async"
               />
 
               <span>{item.state}</span>
@@ -3487,7 +3509,12 @@ Message: ${enquiryData.message}
           <div className="seasonal-grid">
             {currentSeasonalPackages.map((item) => (
               <article className="seasonal-card" key={item.id}>
-                <img src={optimizeImage(item.image)} alt={item.destination} />
+                <img 
+                  src={optimizeImage(item.image)} 
+                  alt={item.destination} 
+                  loading="eager"
+                  decoding="async"
+                  />
 
                 <div className="seasonal-content">
                   <span>{item.month}</span>
@@ -3542,7 +3569,12 @@ Message: ${enquiryData.message}
                   })
                 }
               >
-                <img src={optimizeImage(experience.image)} alt={experience.title} />
+                <img 
+                  src={optimizeImage(experience.image)} 
+                  alt={experience.title}
+                  loading="eager"
+                  decoding="async"
+                />
 
                 <div className="popular-overlay">
                   <small>{experience.location}</small>
@@ -3638,7 +3670,12 @@ Message: ${enquiryData.message}
             {blogs.map((blog) => (
               <article className="blog-card" key={blog.title}>
                 <div className="blog-image">
-                  <img src={optimizeImage(blog.image)} alt={blog.title} />
+                  <img 
+                    src={optimizeImage(blog.image)} 
+                    alt={blog.title} 
+                    loading="eager"
+                    decoding="async"
+                  />
                 </div>
 
                 <div className="blog-content">
