@@ -1,39 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import "./App.css";
 import logo from "./assets/ziyago-logo.png";
 
-
 function App() {
-  useEffect(() => {
-    document.querySelectorAll("img").forEach((img) => {
-      img.decoding = "async";
-      img.loading = "eager";
-    });
-  }, []);
-
-  const optimizeImage = (src) => {
-    if (!src) return src;
-
-    if (!src.includes("images.unsplash.com")) {
-      return src;
-    }
-
-    try {
-      const url = new URL(src);
-
-      url.searchParams.set("auto", "format");
-      url.searchParams.set("fit", "crop");
-      url.searchParams.set("w", "700");
-      url.searchParams.set("q", "70");
-
-      return url.toString();
-    } catch {
-      return src;
-    }
-  };
-
-  // existing code...
-  // നിങ്ങളുടെ existing code ഇവിടെ തുടരും
   // =========================
   // UI STATES
   // =========================
@@ -91,28 +60,28 @@ function App() {
       to: "Dubai",
       price: "₹12,999",
       image:
-        "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85",
     },
     {
       from: "Kochi",
       to: "Bali",
       price: "₹18,499",
       image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     },
     {
       from: "Kochi",
       to: "Bangkok",
       price: "₹14,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
     {
       from: "Kochi",
       to: "Maldives",
       price: "₹16,999",
       image:
-        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     },
   ];
 
@@ -121,37 +90,37 @@ function App() {
       name: "India",
       subtitle: "Mountains, beaches & culture",
       image:
-        "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Dubai",
       subtitle: "Luxury, shopping & adventure",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Thailand",
       subtitle: "Beaches, islands & nightlife",
       image:
-        "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Bhutan",
       subtitle: "Peaceful Himalayan escape",
       image:
-        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Maldives",
       subtitle: "Island luxury & romance",
       image:
-        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Bali",
       subtitle: "Tropical beauty & culture",
       image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     },
   ];
 
@@ -170,7 +139,7 @@ const holidayPackages = [
     price: "₹24,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 2,
@@ -180,7 +149,7 @@ const holidayPackages = [
     price: "₹21,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 3,
@@ -190,7 +159,7 @@ const holidayPackages = [
     price: "₹27,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 4,
@@ -200,7 +169,7 @@ const holidayPackages = [
     price: "₹29,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 5,
@@ -210,7 +179,7 @@ const holidayPackages = [
     price: "₹18,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 6,
@@ -220,7 +189,7 @@ const holidayPackages = [
     price: "₹31,999",
     duration: "6 Nights / 7 Days",
     image:
-      "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 7,
@@ -230,7 +199,7 @@ const holidayPackages = [
     price: "₹32,999",
     duration: "6 Nights / 7 Days",
     image:
-      "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 8,
@@ -240,7 +209,7 @@ const holidayPackages = [
     price: "₹22,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
   },
 
   // =========================
@@ -254,7 +223,7 @@ const holidayPackages = [
     price: "₹36,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 10,
@@ -274,7 +243,7 @@ const holidayPackages = [
     price: "₹39,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1610823230542-55da5ce635aa?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1610823230542-55da5ce635aa?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 12,
@@ -338,7 +307,7 @@ const holidayPackages = [
     price: "₹29,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 18,
@@ -348,7 +317,7 @@ const holidayPackages = [
     price: "₹31,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 19,
@@ -358,7 +327,7 @@ const holidayPackages = [
     price: "₹26,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 20,
@@ -368,7 +337,7 @@ const holidayPackages = [
     price: "₹32,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 21,
@@ -378,7 +347,7 @@ const holidayPackages = [
     price: "₹39,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 22,
@@ -388,7 +357,7 @@ const holidayPackages = [
     price: "₹34,999",
     duration: "6 Nights / 7 Days",
     image:
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 23,
@@ -398,7 +367,7 @@ const holidayPackages = [
     price: "₹28,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1548919973-5cef591cdbc9?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 24,
@@ -408,7 +377,7 @@ const holidayPackages = [
     price: "₹31,999",
     duration: "3 Nights / 4 Days",
     image:
-      "https://images.unsplash.com/photo-1512553353614-82a7370096dc?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1512553353614-82a7370096dc?auto=format&fit=crop&w=900&q=85",
   },
 
   // =========================
@@ -422,7 +391,7 @@ const holidayPackages = [
   price: "₹36,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -433,7 +402,7 @@ const holidayPackages = [
   price: "₹32,999",
   duration: "4 Nights / 5 Days",
   image:
-    "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -444,7 +413,7 @@ const holidayPackages = [
   price: "₹35,999",
   duration: "4 Nights / 5 Days",
   image:
-    "https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -455,7 +424,7 @@ const holidayPackages = [
   price: "₹39,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -466,7 +435,7 @@ const holidayPackages = [
   price: "₹42,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -477,7 +446,7 @@ const holidayPackages = [
   price: "₹37,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -488,7 +457,7 @@ const holidayPackages = [
   price: "₹38,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
 },
 
 {
@@ -499,7 +468,7 @@ const holidayPackages = [
   price: "₹40,999",
   duration: "6 Nights / 7 Days",
   image:
-    "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=85",
 },
   // =========================
 // MALDIVES
@@ -512,7 +481,7 @@ const holidayPackages = [
   price: "₹52,999",
   duration: "4 Nights / 5 Days",
   image:
-    "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 34,
@@ -522,7 +491,7 @@ const holidayPackages = [
   price: "₹48,999",
   duration: "4 Nights / 5 Days",
   image:
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 35,
@@ -532,7 +501,7 @@ const holidayPackages = [
   price: "₹69,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 36,
@@ -542,7 +511,7 @@ const holidayPackages = [
   price: "₹55,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 37,
@@ -552,7 +521,7 @@ const holidayPackages = [
   price: "₹74,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 38,
@@ -562,7 +531,7 @@ const holidayPackages = [
   price: "₹46,999",
   duration: "3 Nights / 4 Days",
   image:
-    "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 39,
@@ -572,7 +541,7 @@ const holidayPackages = [
   price: "₹59,999",
   duration: "4 Nights / 5 Days",
   image:
-    "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=85",
 },
 {
   id: 40,
@@ -582,7 +551,7 @@ const holidayPackages = [
   price: "₹64,999",
   duration: "5 Nights / 6 Days",
   image:
-    "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+    "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
 },
 
     // =========================
@@ -596,7 +565,7 @@ const holidayPackages = [
     price: "₹39,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 42,
@@ -606,7 +575,7 @@ const holidayPackages = [
     price: "₹44,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 43,
@@ -616,7 +585,7 @@ const holidayPackages = [
     price: "₹37,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 44,
@@ -626,7 +595,7 @@ const holidayPackages = [
     price: "₹41,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 45,
@@ -636,7 +605,7 @@ const holidayPackages = [
     price: "₹38,999",
     duration: "4 Nights / 5 Days",
     image:
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 46,
@@ -646,7 +615,7 @@ const holidayPackages = [
     price: "₹54,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 47,
@@ -656,7 +625,7 @@ const holidayPackages = [
     price: "₹42,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: 48,
@@ -666,7 +635,7 @@ const holidayPackages = [
     price: "₹40,999",
     duration: "5 Nights / 6 Days",
     image:
-      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=900&q=85",
   },
 ];
   // =========================
@@ -719,49 +688,49 @@ const holidayPackages = [
       name: "Munnar",
       state: "Kerala",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Wayanad",
       state: "Kerala",
       image:
-        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Manali",
       state: "Himachal Pradesh",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Gulmarg",
       state: "Kashmir",
       image:
-        "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Goa",
       state: "Goa",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Jaipur",
       state: "Rajasthan",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Leh",
       state: "Ladakh",
       image:
-        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
     },
     {
       name: "Srinagar",
       state: "Kashmir",
       image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
     },
   ];
 
@@ -777,7 +746,7 @@ const holidayPackages = [
       title: "Snowy Kashmir Escape",
       price: "₹27,999",
       image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jan-2",
@@ -786,7 +755,7 @@ const holidayPackages = [
       title: "Royal Rajasthan Winter",
       price: "₹22,999",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jan-3",
@@ -795,7 +764,7 @@ const holidayPackages = [
       title: "Kerala Winter Escape",
       price: "₹18,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jan-4",
@@ -804,7 +773,7 @@ const holidayPackages = [
       title: "Dubai Winter Adventure",
       price: "₹36,999",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jan-5",
@@ -813,7 +782,7 @@ const holidayPackages = [
       title: "Maldives Island Escape",
       price: "₹52,999",
       image:
-        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     },
 
     // FEBRUARY
@@ -824,7 +793,7 @@ const holidayPackages = [
       title: "Romantic Kerala",
       price: "₹18,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "feb-2",
@@ -833,7 +802,7 @@ const holidayPackages = [
       title: "Goa Beach Escape",
       price: "₹19,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "feb-3",
@@ -842,7 +811,7 @@ const holidayPackages = [
       title: "Royal Jaipur Journey",
       price: "₹21,999",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "feb-4",
@@ -851,7 +820,7 @@ const holidayPackages = [
       title: "Dubai Couple Escape",
       price: "₹35,999",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "feb-5",
@@ -860,7 +829,7 @@ const holidayPackages = [
       title: "Romantic Bali Experience",
       price: "₹39,999",
       image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     },
 
     // MARCH
@@ -871,7 +840,7 @@ const holidayPackages = [
       title: "Dubai City Escape",
       price: "₹36,999",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "mar-2",
@@ -880,7 +849,7 @@ const holidayPackages = [
       title: "Thailand Island Holiday",
       price: "₹29,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "mar-3",
@@ -889,7 +858,7 @@ const holidayPackages = [
       title: "Kerala Nature Holiday",
       price: "₹17,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "mar-4",
@@ -898,7 +867,7 @@ const holidayPackages = [
       title: "Sri Lanka Discovery",
       price: "₹31,999",
       image:
-        "https://images.unsplash.com/photo-1586611013016-969c19ba27bb?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1586611013016-969c19ba27bb?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "mar-5",
@@ -907,7 +876,7 @@ const holidayPackages = [
       title: "Singapore City Lights",
       price: "₹34,999",
       image:
-        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=85",
     },
 
     // APRIL
@@ -918,7 +887,7 @@ const holidayPackages = [
       title: "Thailand Beach Holiday",
       price: "₹29,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "apr-2",
@@ -927,7 +896,7 @@ const holidayPackages = [
       title: "Bali Tropical Escape",
       price: "₹38,999",
       image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "apr-3",
@@ -936,7 +905,7 @@ const holidayPackages = [
       title: "Maldives Luxury Stay",
       price: "₹49,999",
       image:
-        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "apr-4",
@@ -945,7 +914,7 @@ const holidayPackages = [
       title: "Vietnam Explorer",
       price: "₹32,999",
       image:
-        "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "apr-5",
@@ -954,7 +923,7 @@ const holidayPackages = [
       title: "Andaman Island Escape",
       price: "₹28,999",
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85",
     },
 
     // MAY
@@ -965,7 +934,7 @@ const holidayPackages = [
       title: "Manali Summer Trip",
       price: "₹21,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "may-2",
@@ -974,7 +943,7 @@ const holidayPackages = [
       title: "Kashmir Valley Escape",
       price: "₹27,999",
       image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "may-3",
@@ -983,7 +952,7 @@ const holidayPackages = [
       title: "Ladakh Adventure",
       price: "₹32,999",
       image:
-        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "may-4",
@@ -992,7 +961,7 @@ const holidayPackages = [
       title: "Sikkim Mountain Escape",
       price: "₹24,999",
       image:
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "may-5",
@@ -1001,7 +970,7 @@ const holidayPackages = [
       title: "Meghalaya Nature Trail",
       price: "₹25,999",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
     },
 
     // JUNE
@@ -1012,7 +981,7 @@ const holidayPackages = [
       title: "Ladakh Road Trip",
       price: "₹32,999",
       image:
-        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jun-2",
@@ -1021,7 +990,7 @@ const holidayPackages = [
       title: "Himachal Mountain Escape",
       price: "₹23,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jun-3",
@@ -1030,7 +999,7 @@ const holidayPackages = [
       title: "Sikkim Summer Holiday",
       price: "₹25,999",
       image:
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jun-4",
@@ -1039,7 +1008,7 @@ const holidayPackages = [
       title: "Kashmir Summer Escape",
       price: "₹26,999",
       image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jun-5",
@@ -1048,7 +1017,7 @@ const holidayPackages = [
       title: "Spiti Valley Adventure",
       price: "₹31,999",
       image:
-        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=900&q=85",
     },
 
     // JULY
@@ -1059,7 +1028,7 @@ const holidayPackages = [
       title: "Monsoon Kerala",
       price: "₹16,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jul-2",
@@ -1068,7 +1037,7 @@ const holidayPackages = [
       title: "Coorg Monsoon Escape",
       price: "₹17,999",
       image:
-        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jul-3",
@@ -1077,7 +1046,7 @@ const holidayPackages = [
       title: "Wayanad Rainforest Holiday",
       price: "₹15,999",
       image:
-        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jul-4",
@@ -1086,7 +1055,7 @@ const holidayPackages = [
       title: "Meghalaya Monsoon Magic",
       price: "₹24,999",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "jul-5",
@@ -1095,7 +1064,7 @@ const holidayPackages = [
       title: "Goa Monsoon Escape",
       price: "₹17,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
 
     // AUGUST
@@ -1106,7 +1075,7 @@ const holidayPackages = [
       title: "Goa Monsoon Getaway",
       price: "₹17,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "aug-2",
@@ -1115,7 +1084,7 @@ const holidayPackages = [
       title: "Kerala Green Escape",
       price: "₹16,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "aug-3",
@@ -1124,7 +1093,7 @@ const holidayPackages = [
       title: "Coorg Coffee Trails",
       price: "₹18,999",
       image:
-        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "aug-4",
@@ -1133,7 +1102,7 @@ const holidayPackages = [
       title: "Andaman Island Escape",
       price: "₹28,999",
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "aug-5",
@@ -1142,7 +1111,7 @@ const holidayPackages = [
       title: "Meghalaya Nature Escape",
       price: "₹24,999",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
     },
 
     // SEPTEMBER
@@ -1153,7 +1122,7 @@ const holidayPackages = [
       title: "Bali Experience",
       price: "₹34,999",
       image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "sep-2",
@@ -1162,7 +1131,7 @@ const holidayPackages = [
       title: "Thailand Island Escape",
       price: "₹29,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "sep-3",
@@ -1171,7 +1140,7 @@ const holidayPackages = [
       title: "Kerala Nature Journey",
       price: "₹17,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "sep-4",
@@ -1180,7 +1149,7 @@ const holidayPackages = [
       title: "Rajasthan Heritage Tour",
       price: "₹22,999",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "sep-5",
@@ -1189,7 +1158,7 @@ const holidayPackages = [
       title: "Himachal Valley Escape",
       price: "₹22,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
 
     // OCTOBER
@@ -1200,7 +1169,7 @@ const holidayPackages = [
       title: "Royal Rajasthan",
       price: "₹22,999",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "oct-2",
@@ -1209,7 +1178,7 @@ const holidayPackages = [
       title: "Kerala Festive Escape",
       price: "₹18,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "oct-3",
@@ -1218,7 +1187,7 @@ const holidayPackages = [
       title: "Kashmir Autumn Escape",
       price: "₹27,999",
       image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "oct-4",
@@ -1227,7 +1196,7 @@ const holidayPackages = [
       title: "Bhutan Mountain Escape",
       price: "₹34,999",
       image:
-        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "oct-5",
@@ -1236,7 +1205,7 @@ const holidayPackages = [
       title: "Nepal Himalayan Journey",
       price: "₹29,999",
       image:
-        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=85",
     },
 
     // NOVEMBER
@@ -1247,7 +1216,7 @@ const holidayPackages = [
       title: "Bhutan Mountain Escape",
       price: "₹34,999",
       image:
-        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "nov-2",
@@ -1256,7 +1225,7 @@ const holidayPackages = [
       title: "Royal Rajasthan Journey",
       price: "₹22,999",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "nov-3",
@@ -1265,7 +1234,7 @@ const holidayPackages = [
       title: "Kerala Winter Beginning",
       price: "₹18,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "nov-4",
@@ -1274,7 +1243,7 @@ const holidayPackages = [
       title: "Thailand Delight",
       price: "₹29,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "nov-5",
@@ -1283,7 +1252,7 @@ const holidayPackages = [
       title: "Dubai Explorer",
       price: "₹36,999",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
 
     // DECEMBER
@@ -1294,7 +1263,7 @@ const holidayPackages = [
       title: "Maldives Christmas Holiday",
       price: "₹52,999",
       image:
-        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "dec-2",
@@ -1303,7 +1272,7 @@ const holidayPackages = [
       title: "Dubai Festive Escape",
       price: "₹38,999",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "dec-3",
@@ -1312,7 +1281,7 @@ const holidayPackages = [
       title: "Goa Christmas Getaway",
       price: "₹24,999",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "dec-4",
@@ -1321,7 +1290,7 @@ const holidayPackages = [
       title: "Kerala Christmas Escape",
       price: "₹19,999",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
     },
     {
       id: "dec-5",
@@ -1330,7 +1299,7 @@ const holidayPackages = [
       title: "Thailand Festive Holiday",
       price: "₹31,999",
       image:
-        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&q=70",
+        "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85",
     },
   ];
 
@@ -1379,7 +1348,7 @@ const blogs = [
     title: "kashmir Travel Tips",
     category: "kashmir",
     date: "Sep 15, 2026",
-    image: "/ziyago-frontends/images/blogs.png",
+    image: "/ziyago-frontends/images/blogs.jpg",
   },
   {
     slug: "kerala",
@@ -1387,7 +1356,7 @@ const blogs = [
     category: "Kerala",
     date: "Travel Guide",
     image:
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85",
   },
 
   {
@@ -1396,7 +1365,7 @@ const blogs = [
     category: "Kashmir",
     date: "Travel Tips",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
   },
 
   {
@@ -1405,7 +1374,7 @@ const blogs = [
     category: "Dubai",
     date: "Travel Guide",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
   },
 
   {
@@ -1414,7 +1383,7 @@ const blogs = [
     category: "International",
     date: "Travel Tips",
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=70",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85",
   },
 ];
    
@@ -3105,7 +3074,7 @@ Message: ${enquiryData.message}
             {filteredPackages.map((item) => (
               <article className="package-card" key={item.id}>
                 <div className="package-image">
-                  <img src={optimizeImage(item.image)} alt={item.title} />
+                  <img src={item.image} alt={item.title} />
 
                   <span className="package-tag">{item.category}</span>
 
@@ -3276,7 +3245,7 @@ Message: ${enquiryData.message}
                   })
                 }
               >
-                <img src={optimizeImage(destination.image)} alt={destination.name} />
+                <img src={destination.image} alt={destination.name} />
 
                 <div className="destination-card-overlay">
                   <small>{destination.state}</small>
@@ -3413,7 +3382,7 @@ Message: ${enquiryData.message}
 
             <div className="state-package-image">
               <img
-                src={optimizeImage(item.image)}
+                src={item.image}
                 alt={item.title}
               />
 
@@ -3489,7 +3458,7 @@ Message: ${enquiryData.message}
           <div className="seasonal-grid">
             {currentSeasonalPackages.map((item) => (
               <article className="seasonal-card" key={item.id}>
-                <img src={optimizeImage(item.image)} alt={item.destination} />
+                <img src={item.image} alt={item.destination} />
 
                 <div className="seasonal-content">
                   <span>{item.month}</span>
@@ -3640,7 +3609,7 @@ Message: ${enquiryData.message}
             {blogs.map((blog) => (
               <article className="blog-card" key={blog.title}>
                 <div className="blog-image">
-                  <img src={optimizeImage(blog.image)} alt={blog.title} />
+                  <img src={blog.image} alt={blog.title} />
                 </div>
 
                 <div className="blog-content">
