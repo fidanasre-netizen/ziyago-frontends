@@ -2524,7 +2524,7 @@ Message: ${enquiryData.message}
   <div
     className="search-background"
     style={{
-      backgroundImage: "url('/images/ziyago-bg.png')",
+      backgroundImage: "url('/images/ziyago-bg.jpg')",
     }}
   >
 
@@ -3362,7 +3362,7 @@ Message: ${enquiryData.message}
   <div className="container">
     <div className="how-it-works-image">
       <img 
-        src="/ziyago-frontends/images/how-it-works.png"
+        src="/ziyago-frontends/images/how-it-works.jpg"
         alt="How It Works"
   
       />
