@@ -3051,8 +3051,7 @@ Message: ${enquiryData.message}
                 <img 
                   src={optimizeImage(country.image)} 
                   alt={country.name} 
-                  loading="eager"
-                  decoding="async"
+                
                 />
 
                 <div className="country-overlay">
@@ -3111,8 +3110,7 @@ Message: ${enquiryData.message}
                   <img 
                     src={optimizeImage(item.image)} 
                     alt={item.title} 
-                    loading="eager"
-                    decoding="async"
+              
                   />
 
                   <span className="package-tag">{item.category}</span>
@@ -3241,9 +3239,8 @@ Message: ${enquiryData.message}
                 <img 
                   src={optimizeImage(theme.image)} 
                   alt={theme.title} 
-                  loading="eager"
-                  decoding="async"
-                  />
+          
+                />
 
                 <div className="theme-overlay">
                   <span>{theme.text}</span>
@@ -3292,8 +3289,7 @@ Message: ${enquiryData.message}
                 <img 
                   src={optimizeImage(destination.image)} 
                   alt={destination.name} 
-                  loading="eager"
-                  decoding="async"
+            
                 />
 
                 <div className="destination-card-overlay">
@@ -3433,8 +3429,7 @@ Message: ${enquiryData.message}
               <img
                 src={optimizeImage(item.image)}
                 alt={item.title}
-                loading="eager"
-                decoding="async"
+      
               />
 
               <span>{item.state}</span>
@@ -3512,9 +3507,8 @@ Message: ${enquiryData.message}
                 <img 
                   src={optimizeImage(item.image)} 
                   alt={item.destination} 
-                  loading="eager"
-                  decoding="async"
-                  />
+         
+                />
 
                 <div className="seasonal-content">
                   <span>{item.month}</span>
@@ -3572,8 +3566,7 @@ Message: ${enquiryData.message}
                 <img 
                   src={optimizeImage(experience.image)} 
                   alt={experience.title}
-                  loading="eager"
-                  decoding="async"
+           
                 />
 
                 <div className="popular-overlay">
@@ -3673,8 +3666,7 @@ Message: ${enquiryData.message}
                   <img 
                     src={optimizeImage(blog.image)} 
                     alt={blog.title} 
-                    loading="eager"
-                    decoding="async"
+                
                   />
                 </div>
 
