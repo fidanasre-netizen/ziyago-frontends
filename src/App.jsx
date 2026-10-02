@@ -1348,7 +1348,7 @@ const blogs = [
     title: "kashmir Travel Tips",
     category: "kashmir",
     date: "Sep 15, 2026",
-    image: `${import.meta.env.BASE_URL}images/blogs.png`,
+    image: "/ziyago-frontend/images/blogs.png",
   },
   {
     slug: "kerala",
@@ -3315,7 +3315,7 @@ Message: ${enquiryData.message}
 
     <div className="why-single-image">
       <img
-        src={`${import.meta.env.BASE_URL}images/why-ziyago.png`}
+        src="/images/why-ziyago.png"
         alt="Why ZiyaGo - Travel With Confidence"
       />
     </div>
@@ -3329,7 +3329,7 @@ Message: ${enquiryData.message}
       <section className="how-section">
         <div className="container">
           <div className="how-it-works-image">
-            <img src={`${import.meta.env.BASE_URL}images/how-it-works.png`}alt="How It Works"/>
+            <img src="/images/how-it-works.png"alt="How It Works"/>
           </div>
         </div>
       </section>
