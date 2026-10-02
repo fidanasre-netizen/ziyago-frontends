@@ -3346,7 +3346,7 @@ Message: ${enquiryData.message}
 
     <div className="why-single-image">
       <img
-        src="/ziyago-frontends/images/why-ziyago.png"
+        src="/ziyago-frontends/images/why-ziyago.jpg"
         alt="Why ZiyaGo - Travel With Confidence"
      
       />
