@@ -1348,7 +1348,7 @@ const blogs = [
     title: "kashmir Travel Tips",
     category: "kashmir",
     date: "Sep 15, 2026",
-    image: "/images/blogs.png",
+    image: "/ziyago-frontends/images/blogs.png",
   },
   {
     slug: "kerala",
