@@ -3317,6 +3317,7 @@ Message: ${enquiryData.message}
       <img
         src="/ziyago-frontends/images/why-ziyago.png"
         alt="Why ZiyaGo - Travel With Confidence"
+     
       />
     </div>
 
@@ -3326,13 +3327,17 @@ Message: ${enquiryData.message}
       {/* =========================
           HOW IT WORKS
       ========================= */}
-      <section className="how-section">
-        <div className="container">
-          <div className="how-it-works-image">
-            <img src="/ziyago-frontends/images/how-it-works.png"alt="How It Works"/>
-          </div>
-        </div>
-      </section>
+<section className="how-section">
+  <div className="container">
+    <div className="how-it-works-image">
+      <img 
+        src="/ziyago-frontends/images/how-it-works.png"
+        alt="How It Works"
+  
+      />
+    </div>
+  </div>
+</section>
 
       {/* =========================
           SEASONAL HOLIDAYS
