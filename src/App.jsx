@@ -1348,7 +1348,7 @@ const blogs = [
     title: "kashmir Travel Tips",
     category: "kashmir",
     date: "Sep 15, 2026",
-    image: "/ziyago-frontends/images/blogs.png",
+    image: "/ziyago-frontends/images/blogs.jpg",
   },
   {
     slug: "kerala",
@@ -2493,7 +2493,7 @@ Message: ${enquiryData.message}
   <div
     className="search-background"
     style={{
-      backgroundImage: "url('/images/ziyago-bg.png')",
+      backgroundImage: "url('/images/ziyago-bg.jpg')",
     }}
   >
 
@@ -3315,8 +3315,9 @@ Message: ${enquiryData.message}
 
     <div className="why-single-image">
       <img
-        src="/ziyago-frontends/images/why-ziyago.png"
+        src="/ziyago-frontends/images/why-ziyago.jpg"
         alt="Why ZiyaGo - Travel With Confidence"
+     
       />
     </div>
 
@@ -3326,13 +3327,17 @@ Message: ${enquiryData.message}
       {/* =========================
           HOW IT WORKS
       ========================= */}
-      <section className="how-section">
-        <div className="container">
-          <div className="how-it-works-image">
-            <img src="/ziyago-frontends/images/how-it-works.png"alt="How It Works"/>
-          </div>
-        </div>
-      </section>
+<section className="how-section">
+  <div className="container">
+    <div className="how-it-works-image">
+      <img 
+        src="/ziyago-frontends/images/how-it-works.jpg"
+        alt="How It Works"
+  
+      />
+    </div>
+  </div>
+</section>
 
       {/* =========================
           SEASONAL HOLIDAYS
