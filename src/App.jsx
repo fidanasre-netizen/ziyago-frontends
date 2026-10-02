@@ -2993,7 +2993,7 @@ Message: ${enquiryData.message}
               <article className="flight-route-card" key={`${route.from}-${route.to}`}>
                 <div className="route-image">
                   <img
-                    src={route.image}
+                    src={optimizeImage(route.image)}
                     alt={`${route.from} to ${route.to}`}
                   />
 
